@@ -1,12 +1,14 @@
 <template>
-    <default-field :field="field">
+    <default-field :field="field" :errors="errors" :full-width-content="true">
         <template slot="field">
             <div class="relative">
                 <textarea
+                    class="w-full form-control form-input form-input-bordered py-3 h-auto"
+                    :id="field.attribute"
+                    :readonly="readonly"
+                    :required="required"
                     v-model="value"
-                    class="w-full form-control form-input form-input-bordered min-h-textarea py-3"
-                    :class="errorClasses"
-                    :placeholder="field.name"
+                    v-bind="extraAttributes"
                 ></textarea>
 
                 <charcounter :value="value" :max-chars="field.maxChars" :warning-threshold="field.warningAt"></charcounter>
@@ -31,6 +33,25 @@
 
         components: {
             Charcounter
+        },
+
+        computed: {
+            defaultAttributes() {
+                return {
+                    rows: this.field.rows,
+                    class: this.errorClasses,
+                    placeholder: this.field.name,
+                }
+            },
+            
+            extraAttributes() {
+                const attrs = this.field.extraAttributes
+
+                return {
+                    ...this.defaultAttributes,
+                    ...attrs,
+                }
+            },
         }
     }
 </script>
