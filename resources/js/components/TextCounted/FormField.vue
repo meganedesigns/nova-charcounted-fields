@@ -1,5 +1,5 @@
 <template>
-	<default-field :field="field" :errors="errors" :show-help-text="field.helpText != ''">
+	<default-field :field="field" :errors="errors" :show-help-text="!!field.helpText">
 		<template slot="field">
 			<input
 					class="w-full form-control form-input form-input-bordered"
