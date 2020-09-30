@@ -13,10 +13,6 @@
                 <charcounter :value="value" :max-chars="field.maxChars" :warning-threshold="field.warningAt"></charcounter>
 
             </div>
-
-            <p v-if="hasError" class="my-2 text-danger">
-                {{ firstError }}
-            </p>
         </template>
     </default-field>
 </template>
@@ -27,9 +23,7 @@
 
     export default {
         mixins: [FormField, HandlesValidationErrors],
-
-        props: ['resourceName', 'resourceId', 'field'],
-
+        
         components: {
             Charcounter
         },
