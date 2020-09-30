@@ -19,7 +19,6 @@ class TextCounted extends FieldCounted
 	public function jsonSerialize()
 	{
 		return array_merge(parent::jsonSerialize(), [
-			'helpWidth' => $this->getHelpWidth(),
 			'helpText' => $this->getHelpText(),
 		]);
 	}
