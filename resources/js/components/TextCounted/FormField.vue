@@ -3,6 +3,7 @@
 		<template slot="field">
 			<input
 					class="w-full form-control form-input form-input-bordered"
+          v-model="value"
 					:value="value"
 					:id="field.attribute"
 					:dusk="field.attribute"
