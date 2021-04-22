@@ -1,7 +1,7 @@
 <template>
 	<default-field :field="field" :errors="errors" :full-width-content="true" :show-help-text="!!field.helpText">
 		<template slot="field">
-                <textarea
+      <textarea
 						class="w-full form-control form-input form-input-bordered py-3 h-auto"
 						:id="field.attribute"
 						:dusk="field.attribute"
