@@ -10,16 +10,4 @@ class TextCounted extends FieldCounted
      * @var string
      */
     public $component = 'text-counted';
-
-	/**
-	 * Prepare the element for JSON serialization.
-	 *
-	 * @return array
-	 */
-	public function jsonSerialize()
-	{
-		return array_merge(parent::jsonSerialize(), [
-			'helpText' => $this->getHelpText(),
-		]);
-	}
 }
